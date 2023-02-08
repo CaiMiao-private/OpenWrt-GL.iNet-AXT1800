@@ -28,41 +28,57 @@ packages:
   - wireless-regdb
   - wget-ssl
   - kmod-wireguard-backport
-  - kmod-usb-ledtrig-usbport
-  - kmod-usb-net-cdc-mbim
-  - kmod-usb-net-sierrawireless
-  - usbutils
-  - minicom
-  - procps-ng
-  - procps-ng-ps
-  - grep
-  - lsblk
-  - fdisk
-  - cfdisk
+  # maybe essential
+  - luci-app-ramfree
+  - luci-app-arpbind
+  - luci-app-upnp
+  - luci-app-ddns
+  - luci-app-wol
+  - luci-app-zerotier
+  - luci-app-turboacc
+  # - luci-app-smartdns
+  - luci-app-mosdns
+  - luci-app-mosdns
+  # not essential
   - luci-app-netdata
   - luci-app-ttyd
   - luci-app-nlbwmon
   - luci-app-wrtbwmon
   - luci-app-diskman
   - luci-app-watchcat
-  - luci-app-ramfree
   - luci-app-eqos
   - luci-app-accesscontrol
-  - luci-app-arpbind
-  - luci-app-upnp
-  - luci-app-firewall
-  - luci-app-ddns
-  - luci-app-wol
+  # - luci-app-firewall
   - luci-app-autoreboot
   - luci-app-commands
-  - luci-app-sms-tool
-  - luci-app-fileassistant
-  - luci-theme-argon
-  - luci-app-argon-config
-  - luci-app-openclash
-  - luci-app-zerotier
-  - luci-app-openvpn
-  - luci-app-unblockmusic
-  - luci-app-pushbot
   - luci-app-aliyundrive-webdav
-  - luci-app-turboacc
+  # - luci-theme-argon
+  - luci-theme-argon-2102
+  - luci-app-argon-config
+  # - luci-app-aria2
+  # my custom
+  - nano
+  - htop
+  - grep
+  - screen
+  - xray-core
+  - v2ray-geodata
+  - luci-app-passwall
+  - luci-theme-material
+  # - zram-swap
+  # glinet
+  # - gl-sdk4-base-files
+
+diffconfig: |
+  CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Client=y
+  CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Client=n
+  CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Server=y
+  CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Server=n
+  CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
+  # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ChinaDNS_NG=n
+  CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_IPT2Socks=y
+  CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Simple_Obfs=n
+  CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Client=n
+  CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=n
+  # CONFIG_PACKAGE_kmod-tcp-bbr=y
+  # CONFIG_PACKAGE_TURBOACC_INCLUDE_BBR_CCA=y
